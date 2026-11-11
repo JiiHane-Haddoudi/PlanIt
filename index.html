@@ -4,26 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script> 
-    <script></script>
+    <script src="./js/sidebar.js"></script>
     <title>Dashboard</title>
     <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body class="  min-h-screen">
     <div class=" relative flex min-h-screen">
-    <aside class="border flex w-56 p-6 flex-col">
-
-        <div class="mt-20">
-            <button onclick="changeTheme()"
-                class="px-3 py-2 rounded-lg bg-blue-600 text-white">
-                ☀ / ☾ Theme
-            </button>
-        </div>
-        <nav class="space-y-1">
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./index.html">Dashboard</a>
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./newProjet.html">New project</a>
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./settings.html">Settings</a>
-        </nav>
-    </aside>
+    <div id="sidebar-container"></div>
     <main class="flex-1 ">
         <header class="flex justify-between items-center mb-10">
             <div class=" flex gap-4 flex-row rounded-2xl items-center m-[30px] p-[10px] w-[500px] shadow-xl">
@@ -51,7 +38,39 @@
                 </div>
             </div>
         </header>
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 rounded-2xl">
 
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="flex justify-between items-center bg-slate-200 p-3">
+                    <h3 class="font-bold text-gray-800">To Do</h3>
+                    <span class="text-sm text-gray-600">6</span>
+                </div>
+                <div>
+
+                </div>
+            </article>
+
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="flex justify-between items-center bg-slate-200 p-3">
+                    <h3 class="font-bold text-gray-800">In progress</progress></h3>
+                    <span class="text-sm text-gray-600">6</span>
+                </div>
+                <div>
+
+                </div>
+            </article>
+
+            <article class="bg-white rounded-xl shadow-sm overflow-hidden">
+                <div class="flex justify-between items-center bg-slate-200 p-3">
+                    <h3 class="font-bold text-gray-800">Done</h3>
+                    <span class="text-sm text-gray-600">6</span>
+                </div>
+                <div>
+
+                </div>
+            </article>
+
+        </section>
 
     </main>
 </div>
