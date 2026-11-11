@@ -7,104 +7,127 @@
     <title>New Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="./js/sidebar.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parsleyjs@2.9.2/dist/parsley.min.js"></script>
 </head>
 
-<body class="min-h-screen">
+<body class="min-h-screen bg-[#F7FFFD] text-[#0F4C5C]">
+
     <div class="flex">
-    <div id="sidebar-container"></div>
-    <main>
-        <form class=" m-[50px] p-[20px] space-y-5 rounded-2xl border">
-            <div>
-                <label class="block text-sm mb-2" required> Nom du projet </label>
+        <div id="sidebar-container"></div>
 
-                <input type="text" required class="w-full  border border-gray-700 rounded-lg p-3 focus:border-purple-500">
-
-                <p class="text-red-400 text-xs mt-1"> </p>
-            </div>
-
-            <div>
-                <label class="block text-sm mb-2">
-                    Description 
-                </label>
-
-                <input type="text" required class="w-full border border-gray-700 rounded-lg p-3  focus:border-purple-500">
-
-                <p class="text-red-400 text-xs mt-1"></p>
-            </div>
-
-
-            <div>
-                <label class="block text-sm mb-2">
-                    Brief complet 
-                </label>
-
-                <textarea rows="5" class="w-full  border border-gray-700 rounded-lg p-3  resize-none focus:border-purple-500"></textarea>
-                <p class="text-red-400 text-xs mt-1"></p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <main class="ml-56" >
+            <form class="m-[50px] p-[20px] space-y-5 rounded-2xl border border-[#A8DADC] bg-white shadow-lg shadow-[#0F4C5C]/10"
+                data-parsley-validate>
 
                 <div>
-                    <label class="block text-sm mb-2">
-                        Durée (j)
+                    <label class="block text-sm mb-2 font-medium text-[#0F4C5C]" required>
+                        Nom du projet
                     </label>
 
-                    <input type="number" min="1" step="1" required class="w-full border border-gray-700 rounded-lg p-3 focus:border-purple-500">
+                    <input id="nom-input" data-parsley-minlength="6" type="text" required
+                        class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
 
                     <p class="text-red-400 text-xs mt-1"></p>
                 </div>
 
                 <div>
-                    <label class="block text-sm mb-2">
-                        Nombre de développeurs
+                    <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                        Description
                     </label>
 
-                    <input type="number" min="1" step="1" required class="w-full border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500"> 
+                    <input id="description-input" type="text" required
+                        class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
+
                     <p class="text-red-400 text-xs mt-1"></p>
-                </div>                       
+                </div>
 
-            </div>
+                <div>
+                    <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                        Brief complet
+                    </label>
 
-            <div>
-                <label class="block text-sm mb-2">
-                    Technologies 
-                </label>
+                    <textarea id="brief-input" rows="5" required
+                        class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 resize-none outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition"></textarea>
 
-                <input type="text" placeholder="HTML, CSS, JavaScript, PHP..." required class="w-full  border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500">
-                <p class="text-red-400 text-xs mt-1"></p>
-            </div>
+                    <p class="text-red-400 text-xs mt-1"></p>
+                </div>
 
-            <div>
-                <label class="block text-sm mb-2">
-                    Niveau de difficulté 
-                </label>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-                <select required class="w-full border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500">
+                    <div>
+                        <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                            Durée (j)
+                        </label>
 
-                    <option value="">Choisir un niveau</option>
-                    <option value="Beginner">Beginner</option>
-                    <option value="Intermediate">Intermediate</option>
-                    <option value="Advanced">Advanced</option>
+                        <input id="duree-input" type="number" min="1" step="1" required
+                            class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
 
-                </select>
+                        <p class="text-red-400 text-xs mt-1"></p>
+                    </div>
 
-                <p class="text-red-400 text-xs mt-1"></p>
-            </div>
+                    <div>
+                        <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                            Nombre de développeurs
+                        </label>
 
-            <div class="flex flex-col sm:flex-row gap-3 pt-4">
-                <button type="button" class="flex-1 border border-gray-700 hover:bg-gray-800 rounded-lg p-3 text-gray-300">
-                    Annuler
-                </button>
+                        <input id="dev-input" type="number" min="1" step="1" required
+                            class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
 
-                <button type="submit" class="flex-1 bg-purple-700  hover:bg-purple-600 rounded-lg p-3">
-                    Générer
-                </button>
+                        <p class="text-red-400 text-xs mt-1"></p>
+                    </div>
 
-            </div>
+                </div>
 
-        </form>
-    </main>
+                <div>
+                    <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                        Technologies
+                    </label>
+
+                    <input type="text" required
+                        class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
+
+                    <p class="text-red-400 text-xs mt-1"></p>
+                </div>
+
+                <div>
+                    <label class="block text-sm mb-2 font-medium text-[#0F4C5C]">
+                        Niveau de difficulté
+                    </label>
+
+                    <select id="niveau-input" required
+                        class="w-full border border-[#A8DADC] bg-[#F7FFFD] rounded-lg p-3 outline-none focus:border-[#187C81] focus:ring-2 focus:ring-[#2A9D8F]/20 transition">
+
+                        <option value="">Choisir un niveau</option>
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Advanced">Advanced</option>
+
+                    </select>
+
+                    <p class="text-red-400 text-xs mt-1"></p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 pt-4">
+
+                    <button id="Annuler-btn" type="button"
+                        class="flex-1 border border-[#A8DADC] hover:bg-[#E0F7F4] rounded-lg p-3 text-[#187C81] transition shadow-sm">
+                        Annuler
+                    </button>
+
+                    <button id="submit-btn" type="submit"
+                        class="flex-1 bg-[#187C81] hover:bg-[#0F4C5C] text-white rounded-lg p-3 shadow-md shadow-[#187C81]/20 transition">
+                        Générer le plan de développement
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="border-[#A8DADC]"></div>
+
+        </main>
     </div>
-</body>
 
+</body>
 </html>

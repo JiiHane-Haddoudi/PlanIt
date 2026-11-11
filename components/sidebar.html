@@ -1,25 +1,39 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <aside class="h-full border flex w-56 p-6 flex-col">
 
-        <div class="mt-20">
-            <button onclick="changeTheme()"
-                class="px-3 py-2 rounded-lg bg-blue-600 text-white">
-                ☀ / ☾ Theme
-            </button>
+<body class="bg-[#F7FFFD] text-[#0F4C5C]">
+
+    <aside class="fixed h-full border-r border-[#A8DADC] bg-white shadow-lg shadow-[#0F4C5C]/5 flex w-56 p-6 flex-col">
+        <div>
+            <img class="ml-[20px]" width="100px" src="../assets/images/Plan IT Robot Checklist Logo.png">
         </div>
         <nav class="space-y-1">
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./index.html">Dashboard</a>
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./newProjet.html">New project</a>
-                <a class="block rounded-xl px-4 py-3   transition hover:bg-fuchsia-500/10" href="./settings.html">Settings</a>
+
+            <a class="block rounded-xl px-4 py-3 text-[#0F4C5C] transition hover:bg-[#E0F7F4] hover:text-[#187C81]"
+                href="./index.html">
+                Dashboard
+            </a>
+
+            <a class="block rounded-xl px-4 py-3 text-[#0F4C5C] transition hover:bg-[#E0F7F4] hover:text-[#187C81]"
+                href="./newProjet.html">
+                New project
+            </a>
+
+            <a class="block rounded-xl px-4 py-3 text-[#0F4C5C] transition hover:bg-[#E0F7F4] hover:text-[#187C81]"
+                href="./settings.html">
+                Settings
+            </a>
+
         </nav>
+
     </aside>
+
 </body>
 </html>
