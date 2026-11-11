@@ -1,13 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Project</title>
-    <script src="https://cdn.tailwindcss.com"></script> 
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./js/sidebar.js"></script>
 </head>
-<body>
-    
+
+<body class="min-h-screen">
+    <div class="flex">
+    <div id="sidebar-container"></div>
+    <main>
+        <form class=" m-[50px] p-[20px] space-y-5 rounded-2xl border">
+            <div>
+                <label class="block text-sm mb-2" required> Nom du projet </label>
+
+                <input type="text" required class="w-full  border border-gray-700 rounded-lg p-3 focus:border-purple-500">
+
+                <p class="text-red-400 text-xs mt-1"> </p>
+            </div>
+
+            <div>
+                <label class="block text-sm mb-2">
+                    Description 
+                </label>
+
+                <input type="text" required class="w-full border border-gray-700 rounded-lg p-3  focus:border-purple-500">
+
+                <p class="text-red-400 text-xs mt-1"></p>
+            </div>
+
+
+            <div>
+                <label class="block text-sm mb-2">
+                    Brief complet 
+                </label>
+
+                <textarea rows="5" class="w-full  border border-gray-700 rounded-lg p-3  resize-none focus:border-purple-500"></textarea>
+                <p class="text-red-400 text-xs mt-1"></p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+                <div>
+                    <label class="block text-sm mb-2">
+                        Durée (j)
+                    </label>
+
+                    <input type="number" min="1" step="1" required class="w-full border border-gray-700 rounded-lg p-3 focus:border-purple-500">
+
+                    <p class="text-red-400 text-xs mt-1"></p>
+                </div>
+
+                <div>
+                    <label class="block text-sm mb-2">
+                        Nombre de développeurs
+                    </label>
+
+                    <input type="number" min="1" step="1" required class="w-full border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500"> 
+                    <p class="text-red-400 text-xs mt-1"></p>
+                </div>                       
+
+            </div>
+
+            <div>
+                <label class="block text-sm mb-2">
+                    Technologies 
+                </label>
+
+                <input type="text" placeholder="HTML, CSS, JavaScript, PHP..." required class="w-full  border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500">
+                <p class="text-red-400 text-xs mt-1"></p>
+            </div>
+
+            <div>
+                <label class="block text-sm mb-2">
+                    Niveau de difficulté 
+                </label>
+
+                <select required class="w-full border border-gray-700 rounded-lg p-3 outline-none focus:border-purple-500">
+
+                    <option value="">Choisir un niveau</option>
+                    <option value="Beginner">Beginner</option>
+                    <option value="Intermediate">Intermediate</option>
+                    <option value="Advanced">Advanced</option>
+
+                </select>
+
+                <p class="text-red-400 text-xs mt-1"></p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-4">
+                <button type="button" class="flex-1 border border-gray-700 hover:bg-gray-800 rounded-lg p-3 text-gray-300">
+                    Annuler
+                </button>
+
+                <button type="submit" class="flex-1 bg-purple-700  hover:bg-purple-600 rounded-lg p-3">
+                    Générer
+                </button>
+
+            </div>
+
+        </form>
+    </main>
+    </div>
 </body>
+
 </html>
