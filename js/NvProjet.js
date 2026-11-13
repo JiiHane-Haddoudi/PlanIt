@@ -38,6 +38,7 @@ if (form) {
 
 // afficher projets dans dashboard 
 const headerProjets = document.querySelector("#projets");
+
 if (headerProjets) {
 
     const projets = JSON.parse(localStorage.getItem("projets")) || [];

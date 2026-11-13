@@ -20,6 +20,7 @@
     "status": "To Do",
     "dependencies": []
   },
+
   {
     "id": "TASK-002",
     "title": "Create the new project form",
@@ -40,6 +41,8 @@
     "status": "To Do",
     "dependencies": ["TASK-001"]
   },
+
+
   {
     "id": "TASK-003",
     "title": "Implement project data storage",
@@ -60,6 +63,8 @@
     "status": "To Do",
     "dependencies": ["TASK-002"]
   },
+
+
   {
     "id": "TASK-004",
     "title": "Create the task board interface",
@@ -80,6 +85,8 @@
     "status": "To Do",
     "dependencies": ["TASK-001"]
   },
+
+
   {
     "id": "TASK-005",
     "title": "Generate project tasks using AI",
@@ -100,6 +107,8 @@
     "status": "To Do",
     "dependencies": ["TASK-002", "TASK-003"]
   },
+
+
   {
     "id": "TASK-006",
     "title": "Display generated tasks on the board",
@@ -120,6 +129,8 @@
     "status": "To Do",
     "dependencies": ["TASK-004", "TASK-005"]
   },
+
+
   {
     "id": "TASK-007",
     "title": "Implement task status management",
@@ -140,6 +151,8 @@
     "status": "To Do",
     "dependencies": ["TASK-006"]
   },
+  
+  
   {
     "id": "TASK-008",
     "title": "Implement task filtering and sorting",
@@ -160,6 +173,8 @@
     "status": "To Do",
     "dependencies": ["TASK-006"]
   },
+
+
   {
     "id": "TASK-009",
     "title": "Implement dark and light themes",
@@ -180,6 +195,8 @@
     "status": "To Do",
     "dependencies": ["TASK-001"]
   },
+
+  
   {
     "id": "TASK-010",
     "title": "Test and optimize the application",
