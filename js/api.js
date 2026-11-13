@@ -3,8 +3,9 @@ const inProgress = document.querySelector("#in-progress")
 const done = document.querySelector("#done")
 const projetTitre = document.querySelector("#projet")
 const hours = document.querySelector("#hours")
+const modeDemoBtn = document.querySelector("#modeDemo-btn")
 
- export async function loadJson(todo) {
+ async function loadJson(todo) {
 const response = await fetch("./data/sample-plan.json")
 const taches = await response.json()
 
@@ -28,8 +29,13 @@ tasks.forEach(task => {
     </div>
     </article>
     `
+
 });
     
 }
 
-loadJson(todo)
+ loadJson(todo)
+
+modeDemoBtn.addEventListener("click", function(){
+    window.location.href = "projets.html";
+})
