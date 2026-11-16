@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./data/sample-plan.json"></script>
     <script type="module" src="./js/api.js" defer></script>
     <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="./js/sidebar.js"></script>
 
     <title>TaskBoard</title>
 </head>
 <body>
-    <main>
+    <div id="sidebar-container"></div>
+
+    <main class="ml-56">
          <section class="m-18 pl-24 pr-24">
             <div>
                 <p class="ml-4 pl-4 mt-8 text-xl font-bold" id="projet"></p>
@@ -30,10 +32,10 @@
 
                 <article class=" rounded-xl shadow-sm overflow-hidden">
                     <div class="flex justify-between items-center bg-[#187C81] p-3">
-                        <h3 class="font-bold text-gray-800">In progress</progress></h3>
+                        <h3 class="font-bold text-gray-800">In progress</h3>
                         <span class="text-sm text-gray-600">6</span>
-                    </div class="in-progress">
-                    <div>
+                    </div>
+                    <div id="in-progress">
 
                     </div>
                 </article>
@@ -43,7 +45,7 @@
                         <h3 class="font-bold text-gray-800">Done</h3>
                         <span class="text-sm text-gray-600">6</span>
                     </div>
-                    <div class="done">
+                    <div id="done">
 
                     </div>
                 </article>
