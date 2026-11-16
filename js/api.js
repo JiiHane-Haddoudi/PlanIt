@@ -4,6 +4,10 @@ const done = document.querySelector("#done")
 const projetTitre = document.querySelector("#projet")
 const hours = document.querySelector("#hours")
 const modeDemoBtn = document.querySelector("#modeDemo-btn")
+const tasksToDo = document.querySelector("#tasks-toDo")
+const tasksInProgress = document.querySelector("#tasks-inProgress")
+const tasksDone = document.querySelector("#tasks-done")
+
 
 async function loadJson(todo) {
 const response = await fetch("./data/sample-plan.json")
@@ -28,7 +32,25 @@ tasks.forEach(task => {
     </div>
     </article>
     `
-   
+const countToDo = tasks.reduce((acc)=>{
+    if(task.status === "To Do"){
+        return acc +1
+    }
+},0)
+const countInProgress = tasks.reduce((acc)=>{
+    if(task.status === "In progress"){
+        return acc +1
+    }
+},0)
+const countDone = tasks.reduce((acc)=>{
+    if(task.status === "Done"){
+        return acc +1
+    }
+},0)
+
+tasksToDo.textContent = countToDo
+tasksInProgress.textContent = countInProgress
+tasksDone.textContent = countDone
 });
 const articles = document.querySelectorAll(".task")
 console.log(articles) 
@@ -48,7 +70,10 @@ const column = [todo, inProgress, done]
         column.addEventListener("drop",handleDrop) 
     })
 
+
+
 }
+
 
  loadJson(todo)
 
