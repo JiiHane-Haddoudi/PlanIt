@@ -3,12 +3,12 @@
     left: 0;
     top: 0;
     width: 100%;
-    background: aliceblue; 
+    background: rgba(0, 0, 0, 0.5); 
 
 }
 
-.modal-div .show{
-    display: block;
+.modal-div.show{
+    display: flex;
 }
 
 .modal-div { display: none; }
