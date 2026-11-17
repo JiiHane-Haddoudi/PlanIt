@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../js/sidebar.js" defer></script>
+    <style href="stylesheet" src="../assets/styles.css"></style>
 </head>
 
 <body class="bg-[#F7FFFD] text-[#0F4C5C]">
@@ -25,15 +27,25 @@
                 href="./newProjet.html">
                 New project
             </a>
-
-            <a class="block rounded-xl px-4 py-3 text-[#0F4C5C] transition hover:bg-[#E0F7F4] hover:text-[#187C81]"
-                href="./settings.html">
-                Settings
-            </a>
+            <button id="openMdl" class=" rounded-xl px-4 py-3 text-[#0F4C5C] transition hover:bg-[#E0F7F4] hover:text-[#187C81]" >Settings</button>
+                
+            
 
         </nav>
+        <div id="modal" class="modal-div">
+            <div  class="modal-box">
+                <button id="closeMdl" class="btn-closeMdl">x</button>
+                <h2> Parametre AI</h2>
+                <p> voici le Modal de cle api </p>
+            </div>
+        </div>
 
     </aside>
-
+    <main>
+        
+    </main>
+<script>
+    
+</script>
 </body>
 </html>
