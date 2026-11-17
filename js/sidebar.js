@@ -3,7 +3,10 @@ fetch("./components/sidebar.html")
     .then(data => {
         document.getElementById("sidebar-container").innerHTML = data;
         Modal()
+        callCle()
 });
+
+
 function Modal(){
     const modal= document.querySelector("#modal")
     const btnOpen=document.querySelector("#openMdl")
@@ -21,5 +24,19 @@ btnOpen.addEventListener("click", openModal)
 btnClose.addEventListener("click", closeModal)
 }
 
+export function callCle(){
+    const inputCle= document.querySelector("#input-cle")
+    
+    const btnSaveCle = document.querySelector("#btnSaveCle")
 
+    
+    btnSaveCle.addEventListener("click", ()=>{
+        const valueInput =inputCle.value.trim()
+        if(valueInput){
+        sessionStorage.setItem("cleUser", valueInput)
+        }
+    })
+
+
+}
 

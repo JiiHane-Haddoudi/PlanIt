@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <script src="../js/sidebar.js"  ></script> -->
-    <style href="stylesheet" src="../assets/styles.css"></style>
+    <script src="../js/sidebar.js" type="module"  ></script>
+    <link rel="stylesheet" href="./assets/styles.css">
+
 </head>
 
 <body class="bg-[#F7FFFD] text-[#0F4C5C]">
@@ -38,7 +39,7 @@
                 <h2  class="m-[2px] pb-[20px] font-bold p-[2px]"> Parametre AI</h2>
                 <p class="mb-[10px] "> Clé API Gemini </p>
                 <input id="input-cle" class="border rounded-xl h-14 w-[300px]" placeholder="  entrez votre cle">
-                <button class="rounded-xl bg-[#187C81] hover:bg-[#0F4C5C] hover:text-teal-500  mt-[10px] justify-center items-center h-14 w-[300px]">Enregistrer</button>
+                <button id="btnSaveCle" class="rounded-xl bg-[#187C81] hover:bg-[#0F4C5C] hover:text-teal-500  mt-[10px] justify-center items-center h-14 w-[300px]">Enregistrer</button>
             </div>
         </div>
 
