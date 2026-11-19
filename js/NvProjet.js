@@ -4,7 +4,7 @@ import { getPrompt } from "./prompt.js";
 const btnForm = document.querySelector("#submit-btn")
 const form = document.querySelector("#form")
 if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async(e) => {
         e.preventDefault();
 
         const nom = document.querySelector("#nom-input").value
@@ -14,6 +14,11 @@ if (form) {
         const dev = document.querySelector("#dev-input").value
         const technologies = document.querySelector("#technologies-input").value
         const niveau = document.querySelector("#niveau-input").value
+
+        if(!$(form).parsley().isValid()){
+            return;
+        }
+
         const projet = {
             id: Date.now(),
             nom: nom,
@@ -22,22 +27,25 @@ if (form) {
             duree: duree,
             dev: dev,
             technologies: technologies,
-            niveau: niveau
+            niveau: niveau,
+            tasks:[]
         };
+        const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
+        
+        const taskAI = await getData(promptDefini) 
+        projet.tasks.push(taskAI)
 
-        if(!$(form).parsley().isValid()){
-            return;
-        }
 
         const projets = JSON.parse(localStorage.getItem("projets")) || [];
 
         projets.push(projet)
-
+        
         localStorage.setItem("projets", JSON.stringify(projets))
-        const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
+        
         // console.log(promptDefini)
-        getData(promptDefini) 
-        console.log()
+        
+        
+        console.log(projet)
         // window.location.href = "index.html";
     })
 

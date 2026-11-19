@@ -1,5 +1,6 @@
 import { getPrompt } from "./prompt.js"; 
-const GEMINI_API_KEY = ''
+// const valueInput = JSON.parse(sessionStorage.getItem("cleUser"))
+const GEMINI_API_KEY = ""
 // console.log(GEMINI_API_KEY)
 
 const prompt =  " what is your name"
@@ -28,13 +29,14 @@ export async function getData(prompt) {
     console.log(contentRequest) 
     const taches = JSON.parse(localStorage.getItem("taches")) || [];
     localStorage.setItem("taches", JSON.stringify(contentRequest))
+    return taches
 }
 
 
- const dataProjets = JSON.parse(localStorage.getItem("projets")) || [];
- const projet = dataProjets[1]
-//  console.log(projet)
+//  const dataProjets = JSON.parse(localStorage.getItem("projets")) || [];
+//  const projet = dataProjets[1]
+// //  console.log(projet)
 
- const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
-//  console.log(promptDefini)
-// getData(promptDefini) 
+//  const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
+// //  console.log(promptDefini)
+// // getData(promptDefini) 
