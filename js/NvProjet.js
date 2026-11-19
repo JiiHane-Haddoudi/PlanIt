@@ -1,3 +1,6 @@
+import { getData } from "./api.js";
+import { getPrompt } from "./prompt.js"; 
+
 const btnForm = document.querySelector("#submit-btn")
 const form = document.querySelector("#form")
 if (form) {
@@ -31,8 +34,11 @@ if (form) {
         projets.push(projet)
 
         localStorage.setItem("projets", JSON.stringify(projets))
-
-        window.location.href = "index.html";
+        const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
+        // console.log(promptDefini)
+        getData(promptDefini) 
+        console.log()
+        // window.location.href = "index.html";
     })
 
 }

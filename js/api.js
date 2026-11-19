@@ -5,28 +5,26 @@ const GEMINI_API_KEY = ''
 const prompt =  " what is your name"
 
 
-async function getData(prompt) {
-    const res = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+export async function getData(prompt) {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash-lite:generateContent?key=${GEMINI_API_KEY}`, {
   method: 'POST',
   headers: {
-    Authorization: `Bearer ${GEMINI_API_KEY}`,
+    
 
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    model: 'openai/gpt-oss-20b',
-    messages: [
-      {
-        role: 'user',
-        content: prompt
-      },
-    ],
+    contents:[{
+      parts:[{
+        text:prompt
+      }]
+    }]
   }),
 });
 
     const data = await res.json()
     console.log("STATUS:", res.status);
-    const contentRequest = data
+    const contentRequest = data.candidates[0].content.parts[0].text
     console.log(contentRequest) 
     const taches = JSON.parse(localStorage.getItem("taches")) || [];
     localStorage.setItem("taches", JSON.stringify(contentRequest))
@@ -39,4 +37,4 @@ async function getData(prompt) {
 
  const promptDefini = getPrompt(projet.nom, projet.duree, projet.dev, projet.technologies, projet.niveau, projet.description, projet.brief) 
 //  console.log(promptDefini)
-getData(promptDefini) 
+// getData(promptDefini) 
