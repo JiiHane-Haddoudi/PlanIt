@@ -24,7 +24,7 @@ btnOpen.addEventListener("click", openModal)
 btnClose.addEventListener("click", closeModal)
 }
 
-export function callCle(){
+function callCle(){
     const inputCle= document.querySelector("#input-cle")
     
     const btnSaveCle = document.querySelector("#btnSaveCle")

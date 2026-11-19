@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DetailsTasks</title>
+    <script src="./js/NvProjet.js" defer ></script>
+    <script src="./js/TaskBoard.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="./js/sidebar.js"></script>
+    
+</head>
+<body>
+    <div id="sidebar-container"></div>
+    <main class="ml-56">
+                
+
+         <section class="m-18 pl-24 pr-24">
+            
+            <div>
+                <p class="ml-4 pl-4 mt-8 text-xl font-bold" id="projet">Tasks</p>
+                <p class="ml-4 p-4 text-xl" id="hours"></p>
+            </div> 
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 m-6 rounded-2xl">
+                <article class="rounded-xl shadow-sm overflow-hidden">
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">To Do</h3>
+                        <span id="tasks-toDo" class="text-sm text-gray-600"></span>
+                    </div>
+                    <div id="to-do" class="min-h-[600px]">
+
+                    </div>
+                </article>
+
+                <article class=" rounded-xl shadow-sm overflow-hidden">
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">In progress</h3>
+                        <span id="tasks-inProgress" class="text-sm text-gray-600"></span>
+                    </div>
+                    <div class="min-h-[600px]" id="in-progress">
+
+                    </div>
+                </article>
+
+                <article class="rounded-xl shadow-sm overflow-hidden">
+                    <div class="flex justify-between items-center bg-[#187C81] p-3">
+                        <h3 class="font-bold text-gray-800">Done</h3>
+                        <span id="tasks-done" class="text-sm text-gray-600"></span>
+                    </div>
+                    <div class="min-h-[600px]" id="done">
+
+                    </div>
+                </article>
+                </div>
+        </section> 
+
+    </main>
+</body>
+</html>
