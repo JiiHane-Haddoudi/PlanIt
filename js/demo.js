@@ -19,7 +19,7 @@ hours.textContent = ` ${taches.tasks.length} Jours ,${taches.totalEstimatedHours
 tasks.forEach(task => { 
     todo.innerHTML += `
     <article id='${task.id}' data-id="${task.id}" draggable="true" class=" task bg-[#E0F7F4] rounded-xl shadow-sm overflow-hidden">
-    <div class = "m-4 bg-white p-6"> 
+    <div class = "m-4 bg-white p-6 "> 
         <p class="text-gray-500"> ${task.id} </p>
         <p> ${task.title} </p>
         <div class="flex gap-2">

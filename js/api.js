@@ -1,8 +1,7 @@
 import { getPrompt } from "./prompt.js"; 
-// const valueInput = JSON.parse(sessionStorage.getItem("cleUser"))
-const GEMINI_API_KEY = ""
+const valueInput = sessionStorage.getItem("cleUser")
+ const GEMINI_API_KEY = valueInput
 // console.log(GEMINI_API_KEY)
-
 const prompt =  " what is your name"
 
 
@@ -27,8 +26,9 @@ export async function getData(prompt) {
     console.log("STATUS:", res.status);
     const contentRequest =JSON.parse(data.candidates[0].content.parts[0].text) 
     console.log(contentRequest) 
-    const taches = JSON.parse(localStorage.getItem("taches")) || [];
     localStorage.setItem("taches", JSON.stringify(contentRequest))
+    const taches = JSON.parse(localStorage.getItem("taches")) || [];
+    
     return taches
 }
 

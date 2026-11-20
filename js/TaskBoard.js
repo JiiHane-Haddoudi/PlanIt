@@ -1,13 +1,15 @@
 const tasksToDo = document.querySelector("#to-do")
+const ToDo = document.querySelector("#tasks-toDo")
+const tasksInProgress = document.querySelector("#tasks-inProgress")
+const tasksDone = document.querySelector("#tasks-done")
 const projets = JSON.parse(localStorage.getItem("projets"));
-
+const articles = document.querySelectorAll('.article')
 const params = new URLSearchParams(window.location.search)
 const projetId = Number(params.get("id"))
 
 const projet = projets.find((element) => (element.id) === projetId );
 
 const tasks = (projet.tasks[0].tasks)
-console.log(tasks)
 
 tasks.forEach(task => { 
     tasksToDo.innerHTML += `
@@ -25,3 +27,27 @@ tasks.forEach(task => {
     </div>
     </article>` 
 })
+
+console.log(articles)
+articles.forEach (article=>{
+    article.addEventListener ("dragstart", e =>{
+        e.target.classList.add("dragging")
+        e.dataTransfer.setData('text/plain', e.target.dataset.id)
+    })
+    article.addEventListener("dragend", e=>{
+        e.target.classList.remove("dragging")
+    })
+})
+const column = [todo, inProgress, done]
+    column.forEach(column=>{
+        column.addEventListener("dragover", e =>e.preventDefault())
+        column.addEventListener("drop",handleDrop) 
+    })
+
+function handleDrop(e){
+    e.preventDefault()
+    const draggedId = e.dataTransfer.getData('text/plain')
+    const article = document.getElementById(`${draggedId}`) 
+    e.currentTarget.appendChild(article)  
+
+}
