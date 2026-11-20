@@ -25,7 +25,7 @@ export async function getData(prompt) {
 
     const data = await res.json()
     console.log("STATUS:", res.status);
-    const contentRequest = data.candidates[0].content.parts[0].text
+    const contentRequest =JSON.parse(data.candidates[0].content.parts[0].text) 
     console.log(contentRequest) 
     const taches = JSON.parse(localStorage.getItem("taches")) || [];
     localStorage.setItem("taches", JSON.stringify(contentRequest))
