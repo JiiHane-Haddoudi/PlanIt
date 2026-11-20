@@ -5,13 +5,11 @@ const params = new URLSearchParams(window.location.search)
 const projetId = Number(params.get("id"))
 
 const projet = projets.find((element) => (element.id) === projetId );
-console.log(projet);
 
-
-const tasks = JSON.parse(projet.tasks)
-
+const tasks = (projet.tasks[0].tasks)
 console.log(tasks)
-tasks.tasks.forEach(task => { 
+
+tasks.forEach(task => { 
     tasksToDo.innerHTML += `
         <article id='${task.id}' data-id="${task.id}" draggable="true" class=" task bg-[#E0F7F4] rounded-xl shadow-sm overflow-hidden">
     <div class = "m-4 bg-white p-6"> 
