@@ -1,10 +1,14 @@
 const tasksToDo = document.querySelector("#to-do")
-const params = new URLSearchParams(window.location.search)
-const projetId = params.get("id")
-
-const projet = projets.find(prt =>prt.id ===projetId)
 const projets = JSON.parse(localStorage.getItem("projets"));
-const tasks = JSON.parse(projets.tasks[0])
+
+const params = new URLSearchParams(window.location.search)
+const projetId = Number(params.get("id"))
+
+const projet = projets.find((element) => (element.id) === projetId );
+console.log(projet);
+
+
+const tasks = JSON.parse(projet.tasks)
 
 console.log(tasks)
 tasks.tasks.forEach(task => { 
